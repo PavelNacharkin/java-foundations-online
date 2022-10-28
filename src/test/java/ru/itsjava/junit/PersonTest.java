@@ -6,4 +6,5 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Класс Person должен")
 
 public class PersonTest {
+
 }
