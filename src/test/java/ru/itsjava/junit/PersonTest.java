@@ -7,9 +7,8 @@ import org.junit.jupiter.api.Test;
 @DisplayName("Класс Person должен")
 public class PersonTest {
     public static final String DEFAULT_NAME = "Pavel";
-    public static final int DEFAULT_AGE = 18;
-    private static final String NEW_NAME ="Garry" ;
-    private static final int NEW_AGE = 17;
+    public static final int DEFAULT_AGE = 17;
+
 
     @Test
     @DisplayName("корректно создаваться конструктором ")
@@ -31,10 +30,8 @@ public class PersonTest {
     @DisplayName("корректно проверять совершеннолетие ")
     public void shouldCorrectLegalAge() {
         Person actualPerson = new Person(DEFAULT_NAME, DEFAULT_AGE);
-        Person newPerson = new Person(NEW_NAME,NEW_AGE);
+        Assertions.assertFalse(actualPerson.takeBeer());
+        actualPerson.birthday();
         Assertions.assertTrue(actualPerson.takeBeer());
-        Assertions.assertFalse(newPerson.takeBeer());
-        newPerson.birthday();
-        Assertions.assertTrue(newPerson.takeBeer());
     }
 }
