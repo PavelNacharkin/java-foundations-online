@@ -1,5 +1,7 @@
 package ru.itsjava.statics;
 
+import ru.itsjava.staticsHW.Car;
+
 public class StaticPractice {
     public static void main(String[] args) {
 //        System.out.println("Salary.increaseCoeficent = " + Salary.increaseCoeficent);
@@ -12,5 +14,8 @@ public class StaticPractice {
         System.out.println("cleanerSalary.getFullSalary() = " + cleanerSalary.getFullSalary());
         System.out.println("targetSalary.getFullSalary() = " + targetSalary.getFullSalary());
         System.out.println("Salary.CEO = " + Salary.CEO);
+
+
+
     }
 }
