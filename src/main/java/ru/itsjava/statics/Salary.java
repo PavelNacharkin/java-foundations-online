@@ -4,8 +4,9 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class Salary {
-    private double baseSalary;
+    private final double baseSalary;
     private static double increaseCoefficient = 2.5;
+    public final static double CEO=500_000.0;
 
 
     public double getFullSalary() {

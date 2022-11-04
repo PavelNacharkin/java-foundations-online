@@ -11,6 +11,6 @@ public class StaticPractice {
         Salary.setIncreaseCoefficient(1.0);
         System.out.println("cleanerSalary.getFullSalary() = " + cleanerSalary.getFullSalary());
         System.out.println("targetSalary.getFullSalary() = " + targetSalary.getFullSalary());
-
+        System.out.println("Salary.CEO = " + Salary.CEO);
     }
 }
