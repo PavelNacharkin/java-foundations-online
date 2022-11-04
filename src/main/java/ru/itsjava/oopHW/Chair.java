@@ -11,6 +11,7 @@ public class Chair {
     private String sheathingMaterial;
     private final boolean recliningBack;
     private final boolean lumbarSupport;
+    public final static String DELIVERY_METHOD = "Самовывоз";
 
     public void song() {
         System.out.println("Скрип-скрип");
