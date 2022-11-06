@@ -1,4 +1,7 @@
 package ru.itsjava.interfaceHW;
 
-public class Flyable {
+public interface Flyable {
+    void fly();
+
+    String flyMaxDistance();
 }
