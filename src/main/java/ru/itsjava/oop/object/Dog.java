@@ -1,4 +1,4 @@
-package ru.itsjava.object;
+package ru.itsjava.oop.object;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

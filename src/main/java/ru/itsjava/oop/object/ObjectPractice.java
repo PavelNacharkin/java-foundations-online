@@ -1,4 +1,4 @@
-package ru.itsjava.object;
+package ru.itsjava.oop.object;
 
 public class ObjectPractice {
     public static void main(String[] args) {
