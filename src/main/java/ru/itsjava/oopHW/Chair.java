@@ -5,7 +5,7 @@ import lombok.Data;
 
 @AllArgsConstructor
 @Data
-public class Chair {
+public abstract class Chair {
     private final int maxLoad;
     private final int amountSupportPoint;
     private String sheathingMaterial;
