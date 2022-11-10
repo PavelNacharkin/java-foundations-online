@@ -17,4 +17,7 @@ public class Cat implements Walkable, Runnable {
         System.out.println("Мурк, гулять");
 
     }
+
+    public static class Man {
+    }
 }
