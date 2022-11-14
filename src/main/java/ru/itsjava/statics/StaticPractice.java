@@ -16,6 +16,5 @@ public class StaticPractice {
         System.out.println("Salary.CEO = " + Salary.CEO);
 
 
-
     }
 }

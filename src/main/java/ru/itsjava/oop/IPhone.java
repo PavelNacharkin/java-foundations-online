@@ -4,7 +4,8 @@ public class IPhone extends Telephone {
     public IPhone() {
         super("Apple", false);
     }
-    public String toString(){
-return "переопределенный метод toString";
+
+    public String toString() {
+        return "переопределенный метод toString";
     }
 }

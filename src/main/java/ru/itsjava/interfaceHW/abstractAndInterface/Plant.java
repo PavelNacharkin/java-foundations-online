@@ -1,5 +1,5 @@
 package ru.itsjava.interfaceHW.abstractAndInterface;
 
-public class Plant implements Eatable {
+public final class Plant implements Eatable {
 
 }
