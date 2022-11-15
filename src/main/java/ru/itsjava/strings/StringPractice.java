@@ -32,23 +32,43 @@ public class StringPractice {
 
         stringForHomeWork.compareTo("Другая строка");/* сравнивает строки лексикографически, ответ
           представляется ввиде >0,<0,=0 */
+
         stringForHomeWork.compareToIgnoreCase("Другая строка");/* сравнивает строки лексикографически
          игнорируя регистр */
 
         stringForHomeWork.equals("Другая строка");/* сравнение строки с  обьектом*/
+
         stringForHomeWork.equalsIgnoreCase("Другая строка");/* сравнение строки с  обьектом
         игнорируя регистр */
+
         System.out.println("stringForHomeWork.getBytes(StandardCharsets.UTF_8) = " +
                 stringForHomeWork.getBytes(StandardCharsets.UTF_8));/* кодирует строку в последовательность
                 байтов и сохраняет в новый массив байтов используя кодировку UTF_8 */
+
         stringForHomeWork.toLowerCase(Locale.ROOT);/* переводит строку в нижний регистр с базовым представлением алфавита*/
+
         stringForHomeWork.toUpperCase();/* переводит строку в верхний регистр*/
+
         String[] strsForHomeWork = stringForHomeWork.split(" ");/* разделяет строку на массивы*/
+
         stringForHomeWork.isEmpty();/* проверяет пустая ли строка */
+
         stringForHomeWork.trim();/* возвращает копию строки без пробело по краям */
-        stringForHomeWork.intern();/* возвращает строку в пул строк */
 
+        String str2 = stringForHomeWork.intern();/* возвращает строку в пул строк */
 
+        System.out.println("stringForHomeWork.concat(\" Другая строка\") = " + stringForHomeWork.concat(" Другая строка"));
+        /* конкатенация строк*/
 
+        System.out.println("stringForHomeWork.hashCode() = " + stringForHomeWork.hashCode());/* возвращает хэшкод обьекта*/
+
+        System.out.println("stringForHomeWork.indent(3) = " + stringForHomeWork.indent(3));/* позволяет сделать отступ
+        в n пробелов перед строкой*/
+
+        System.out.println("stringForHomeWork.indexOf(\"Для работы\") = " + stringForHomeWork.indexOf("для"));/* возвращает индекс под которым
+        строка первый раз совпала с нашей строкой, т.е. первое вхождение указанного параметра в обьект String*/
+
+        String replace = stringForHomeWork.replace("С", "V");
+        System.out.println("replace = " + replace); /* позволяет заменить символ*/
     }
 }
