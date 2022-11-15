@@ -70,5 +70,15 @@ public class StringPractice {
 
         String replace = stringForHomeWork.replace("С", "V");
         System.out.println("replace = " + replace); /* позволяет заменить символ*/
+
+        StringBuilder newStringForHW = new StringBuilder("Новая строка для домашней работы");
+        System.out.println("newStringForHW.reverse() = " + newStringForHW.reverse());/* меняет направление строки*/
+        newStringForHW.reverse();
+        System.out.println("newStringForHW.append(\" , которую можно изменять\") = " + newStringForHW.append(" , которую можно изменять"));
+        /* метод позволяет изменять строку добавлением*/
+        System.out.println("newStringForHW.delete(12,22) = " + newStringForHW.delete(12, 22));/* удаляет промежут между указанными индексами*/
+        System.out.println("newStringForHW.append(\"как хочется\",0,4) = " + newStringForHW.append(" как хочется", 0, 4));
+        /* добавляет указаное количество индексов со входящего параметра */
+        System.out.println("newStringForHW.capacity() = " + newStringForHW.capacity());/* возвращает текущий обьем выделенной памяти*/
     }
 }
