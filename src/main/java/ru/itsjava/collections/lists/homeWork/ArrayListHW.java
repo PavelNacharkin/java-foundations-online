@@ -40,8 +40,13 @@ public class ArrayListHW {
         System.out.println("myBooksList.contains(coreJava) = " + myBooksList.contains(coreJava));
         System.out.println("myBooksList.contains(cleanCode) = " + myBooksList.contains(cleanCode));
 
-        System.out.print("list:" + booksList);
+//        System.out.print("list:" + booksList);
+        System.out.print("List:[");
+        for (Books elementBooks : booksList
+        ) {
+            System.out.println(elementBooks + " ");
 
-
+        }
+        System.out.println();
     }
 }
