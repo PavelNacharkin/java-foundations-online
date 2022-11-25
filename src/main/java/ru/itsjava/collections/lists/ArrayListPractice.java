@@ -33,15 +33,15 @@ public class ArrayListPractice {
         System.out.println("watchesList.size() = " + watchesList.size());
 
         List<Watch> watchesOmegaList = new ArrayList<>();
-        Watch andrewOmega = new Watch("Omega","Andrew",100_000.0);
-        Watch romaOmega = new Watch("Omega","Roman",100_000.0);
+        Watch andrewOmega = new Watch("Omega", "Andrew", 100_000.0);
+        Watch romaOmega = new Watch("Omega", "Roman", 100_000.0);
         watchesOmegaList.add(andrewOmega);
         watchesOmegaList.add(romaOmega);
         System.out.println("watchesOmegaList = " + watchesOmegaList);
         watchesList.addAll(watchesOmegaList);
         System.out.println("watchesList = " + watchesList);
-        Watch vitaliyWatch = new Watch("Seiko","Vitaliy",20_000.0);
-        watchesList.add(1,vitaliyWatch);
+        Watch vitaliyWatch = new Watch("Seiko", "Vitaliy", 20_000.0);
+        watchesList.add(1, vitaliyWatch);
         System.out.println("watchesList = " + watchesList);
 
 

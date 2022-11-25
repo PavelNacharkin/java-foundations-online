@@ -12,6 +12,7 @@ public class Books {
 
 
     public String toString() {
-        return  "Books{" + "''" + this.getBookTitle() + "''" + ", " + "''" + this.getAuthor() + "''" + ", " + this.getPageCount() + "};"+"\n";
+        return "Books{" + "''" + this.getBookTitle() + "''" + ", " + "''" + this.getAuthor() + "''" + ", " + this.getPageCount() + "};" + "\n";
+
     }
 }
