@@ -132,14 +132,16 @@ public class ArrayListHW {
             }
         }
         System.out.println("Найти средний возраст всех женщин");
+        int femaleCount = 0;
         int femaleAge = 0;
         for (int i = 0; i < personList.size(); i++) {
             Person index = personList.get(i);
             if (index.getGender().equals("female")) {
+                femaleCount++;
                 femaleAge += index.getAge();
             }
         }
-        System.out.println("Общий возраст всех женщин: " + femaleAge);
+        System.out.println("Общий возраст всех женщин: " + femaleAge / femaleCount);
     }
 }
 
