@@ -1,9 +1,5 @@
 package ru.itsjava.collections.lists.arraylist;
 
-
-import java.util.Arrays;
-import java.util.List;
-
 public class MyArrayList {
     public static final int DEFAULT_CAPACITY = 10;
     private int realSize;
@@ -46,7 +42,24 @@ public class MyArrayList {
     }
 
     public boolean remove(Object o) {
-        return false;
+        int delIndex = -1;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != null && array[i].equals(o)) {
+                delIndex = i;
+                break;
+            }
+        }
+        if (array.length - 1 - delIndex >= 0) {
+            System.arraycopy(array, delIndex + 1, array, delIndex, array.length - 1 - delIndex);
+        }
+
+        if (delIndex == -1) {
+            return false;
+        } else {
+            realSize--;
+            return true;
+        }
+
     }
 
     public void clear() {
@@ -57,27 +70,80 @@ public class MyArrayList {
     }
 
     public Object get(int index) {
+        checkIndex(index);
+        for (int i = 0; i < array.length; i++) {
+            if (i == index) {
+                return array[i];
+            }
+        }
         return null;
     }
 
     public Object set(int index, Object element) {
+        checkIndex(index);
+        for (int i = 0; i < array.length; i++) {
+            if (i == index) {
+                array[i] = element;
+            }
+        }
         return null;
     }
 
     public void add(int index, Object element) {
-
+        checkIndex(index);
+        realSize++;
+        if (realSize >= 0) {
+            System.arraycopy(array, index, array, index + 1, realSize);
+            for (int i = 0; i < array.length; i++) {
+                if (i == index) {
+                    array[i] = element;
+                }
+            }
+        }
     }
 
     public Object remove(int index) {
-        return null;
+        checkIndex(index);
+
+        Object resElement = array[index];
+
+        if (array.length - 1 - index >= 0) {
+            System.arraycopy(array, index + 1, array, index, array.length - 1 - index);
+        }
+        realSize--;
+        return resElement;
     }
 
+    private void checkIndex(int index) {
+        if (!isCorrectIndex(index)) {
+            throw new ArrayIndexOutOfBoundsException("Некорректный индекс");
+        }
+    }
+
+    private boolean isCorrectIndex(int index) {
+        if ((index > -1) && (index < realSize)) {
+            return true;
+        }
+        return false;
+    }
+
+
     public int indexOf(Object o) {
-        return 0;
+        for (int i = 0; i < realSize; i++) {
+            if (array[i].equals(o)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public int lastIndexOf(Object o) {
-        return 0;
+        for (int i = realSize - 1; i >= 0; i--) {
+            if (array[i].equals(o)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
@@ -90,3 +156,4 @@ public class MyArrayList {
         return stringBuilder.toString();
     }
 }
+
