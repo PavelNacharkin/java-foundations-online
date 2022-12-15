@@ -1,4 +1,7 @@
-package ru.itsjava.collections.lists.arraylist;
+package ru.itsjava.collections.lists.arrayList;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyArrayListPractice {
     public static void main(String[] args) {
