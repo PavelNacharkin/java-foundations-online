@@ -1,4 +1,4 @@
-package ru.itsjava.collections.lists.arraylist;
+package ru.itsjava.collections.lists.arrayList;
 
 public class MyArrayList {
     public static final int DEFAULT_CAPACITY = 10;
@@ -71,22 +71,13 @@ public class MyArrayList {
 
     public Object get(int index) {
         checkIndex(index);
-        for (int i = 0; i < array.length; i++) {
-            if (i == index) {
-                return array[i];
-            }
-        }
-        return null;
+        return array[index];
     }
 
     public Object set(int index, Object element) {
         checkIndex(index);
-        for (int i = 0; i < array.length; i++) {
-            if (i == index) {
-                array[i] = element;
-            }
-        }
-        return null;
+        array[index] = element;
+        return element;
     }
 
     public void add(int index, Object element) {
@@ -94,11 +85,7 @@ public class MyArrayList {
         realSize++;
         if (realSize >= 0) {
             System.arraycopy(array, index, array, index + 1, realSize);
-            for (int i = 0; i < array.length; i++) {
-                if (i == index) {
-                    array[i] = element;
-                }
-            }
+            array[index] = element;
         }
     }
 
@@ -121,7 +108,7 @@ public class MyArrayList {
     }
 
     private boolean isCorrectIndex(int index) {
-        if ((index > -1) && (index < realSize)) {
+        if ((index > -1) && (index <= realSize)) {
             return true;
         }
         return false;
