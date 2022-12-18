@@ -31,7 +31,7 @@ public class MyLinkedList {
         while (curNode.getNext() != null) {
             curNode = curNode.getNext();
         }
-        if (curNode.getValue().equals(o)||head.getValue().equals(o)){
+        if (curNode.getValue().equals(o) || head.getValue().equals(o)) {
             return true;
         }
         return false;
