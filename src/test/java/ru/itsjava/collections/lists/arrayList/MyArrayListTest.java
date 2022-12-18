@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 
 @DisplayName("Класс MyArrayListTest должен: ")
-public class MyArrayListTest {
+public class   MyArrayListTest {
 
     MyArrayList list = new MyArrayList();
 
