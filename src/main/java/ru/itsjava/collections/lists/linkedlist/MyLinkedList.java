@@ -72,7 +72,25 @@ public class MyLinkedList {
     }
 
     public Object remove(int index) {
+        checkIndex(index);
+        if (index==0){
+            Object resValue = head.getValue();
+            if (head.getNext()==null)
+            head=null;
+        }
         return null;
+    }
+    private void checkIndex(int index) {
+        if (!isCorrectIndex(index)) {
+            throw new ArrayIndexOutOfBoundsException("Некорректный индекс");
+        }
+    }
+
+    private boolean isCorrectIndex(int index) {
+        if ((index > -1) && (index <= size())) {
+            return true;
+        }
+        return false;
     }
 
     public int indexOf(Object o) {
