@@ -21,5 +21,8 @@ public class MyLinkedListPractice {
         System.out.println("list.contains(\"Строка 1\") = " + list.contains("Строка 1"));
         System.out.println("list.contains(\"Строка 3\") = " + list.contains("Строка 3"));
         System.out.println("list.contains(\"Строка 4\") = " + list.contains("Строка 4"));
+        System.out.println("list = " + list);
+        list.remove(1);
+        System.out.println("list = " + list);
     }
 }
