@@ -24,5 +24,8 @@ public class MyLinkedListPractice {
         System.out.println("list = " + list);
         list.remove(1);
         System.out.println("list = " + list);
+        list.clear();
+        System.out.println("list = " + list);
+        System.out.println("list.size() = " + list.size());
     }
 }

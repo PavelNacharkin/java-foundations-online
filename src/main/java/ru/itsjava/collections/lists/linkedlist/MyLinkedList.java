@@ -56,7 +56,12 @@ public class MyLinkedList {
     }
 
     public void clear() {
-
+        Node curNode = head;
+        while (curNode.getNext() != null) {
+            curNode = curNode.getNext();
+        }
+        curNode.setNext(null);
+        head = null;
     }
 
     public Object get(int index) {
