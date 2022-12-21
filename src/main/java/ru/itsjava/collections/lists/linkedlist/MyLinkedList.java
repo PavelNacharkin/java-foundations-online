@@ -120,7 +120,7 @@ public class MyLinkedList {
     // СТРОКА1 -> СТРОКА 2 ->СТРОКА3 -> null
     public Object remove(int index) {
         checkIndex(index);/* Проверка корректности индекса */
-        if (index == 0) {/* Если инедкс равен 0 то -> */
+        if (index == 1) {/* Если инедкс равен 0 то -> */
             Object resValue = head.getValue();/* Создаем результирующий obj и присваеваем ему значение head */
             if (head.getNext() == null) {/* если у head ссылка на след obj равна null, то head один в этом списке*/
                 head = null;/* удаляем head присваивая ему null */
@@ -132,7 +132,7 @@ public class MyLinkedList {
         Node cureNode = head;/* создаем текущий элемент */
         Node prevNode = head;/*создаем предыдущий элемент */
 
-        int count = 0;/* счетчик индекса*/
+        int count = 1;/* счетчик индекса*/
         while ((cureNode = cureNode.getNext()) != null) {/* бежим по списку с первого передвигая curNode на след.*/
             count++;/* пробегаясь по элементам добавляем к count +1 */
             if (count == index) {/* когда найдем позицию элемента с числом count соответствующую входящему индексу*/
@@ -181,7 +181,7 @@ public class MyLinkedList {
     }
 
     public int lastIndexOf(Object o) {
-        if (head==null)return -1;
+        if (head == null) return -1;
         Node cureNode = head;
         Node prevNode = head;
         int count = 1;
