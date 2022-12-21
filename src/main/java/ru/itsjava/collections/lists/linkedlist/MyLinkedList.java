@@ -11,6 +11,7 @@ public class MyLinkedList {
         } else {
             Node curNode = head;
             while (curNode.getNext() != null) {
+
                 count++;
                 curNode = curNode.getNext();
             }
@@ -19,23 +20,24 @@ public class MyLinkedList {
     }
 
     public boolean isEmpty() {
-        if (head == null) {
-            return true;
-        }
-
-        return false;
+        return head == null;
     }
 
     public boolean contains(Object o) {
         Node curNode = head;
+        if (curNode.getValue().equals(o)) {
+            return true;
+        }
         while (curNode.getNext() != null) {
             curNode = curNode.getNext();
-        }
-        if (curNode.getValue().equals(o) || head.getValue().equals(o)) {
-            return true;
+            if (curNode.getValue().equals(o)) {
+                return true;
+            }
+
         }
         return false;
     }
+
 
     public boolean add(Object o) {
         Node resNode = new Node(o, null);
@@ -65,11 +67,27 @@ public class MyLinkedList {
     }
 
     public Object get(int index) {
-        return null;
+        checkIndex(index);
+        Node curNode = head;
+        int count = 1;
+        for (int i = 1; i < index; i++) {
+            count++;
+            curNode = curNode.getNext();
+            if (index == count) {
+                return curNode.getValue();
+            }
+        }
+        return curNode.getValue();
     }
 
     public Object set(int index, Object element) {
-        return null;
+        Node curNode = head;
+        for (int i = 1; i < index; i++) {
+            curNode = curNode.getNext();
+        }
+        curNode.setValue(element);
+        return curNode;
+
     }
 
     public void add(int index, Object element) {
