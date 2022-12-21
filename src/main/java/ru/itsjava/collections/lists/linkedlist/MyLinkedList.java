@@ -25,15 +25,10 @@ public class MyLinkedList {
 
     public boolean contains(Object o) {
         Node curNode = head;
-        if (curNode.getValue().equals(o)) {
-            return true;
-        }
+        if (curNode.getValue().equals(o)) return true;
         while (curNode.getNext() != null) {
             curNode = curNode.getNext();
-            if (curNode.getValue().equals(o)) {
-                return true;
-            }
-
+            if (curNode.getValue().equals(o)) return true;
         }
         return false;
     }
@@ -54,7 +49,34 @@ public class MyLinkedList {
     }
 
     public boolean remove(Object o) {
-        return false;
+        if (head == null) return false;/*проверяем,если head равен null, то возвращаем false */
+        /*если список пуст то ничего не удалим*/
+        if (head.getValue().equals(o)) {/*если список не пуст проверяем равно ли head удаляемому элементу */
+            head = head.getNext();/* если да, то перемещаем указатель на след элемент,убрав ссылку на начальный head*/
+            return true;/* возвращаем true, если условие выше выполнено*/
+        }
+
+        if (head.getNext() == null) return false;/*если head не равен элементу, то проверяем
+        если после head еще элементы, если нет то возвращаем false */
+
+        Node prevNode = head;/*создаем предыдущий элемент */
+        Node cureNode = head;/*создаем текущий элемент */
+
+
+        while ((cureNode = cureNode.getNext()) != null) {
+            /* создаем цикл, чтобы бежать по списку и сразу перемещаем текущий элемент на 1 вперед*/
+            if (cureNode.getValue().equals(o)) {/* сравниваем указатель текущего элемента с удаляемым */
+                break;/* если нашли выходим из цикла*/
+            }
+            prevNode = prevNode.getNext();/* если не нашли перемещаем указатель предыдущего елемента на 1 */
+        }
+        if (cureNode == null)
+            return false;/* если текущий указатель указывает на null, мы не сможем удалить и возвращаем false*/
+        /* по завершению цикла имеем указатели на предыдущий и текущий элементы*/
+        prevNode.setNext(cureNode.getNext());/*у текущего элемена берем ссылку на след и присваиваем ее предыдущему */
+        cureNode.setNext(null);/* после чего у удаленого обьекта убираем сыылку на след элемент*/
+
+        return true;
     }
 
     public void clear() {
@@ -118,6 +140,7 @@ public class MyLinkedList {
             }
             prevNode = prevNode.getNext();/* передвигаем значение prevNode на след.*/
         }
+        if (cureNode == null) return null;
         Object resValue = cureNode.getValue();/* присваиваем результ. obj  значение текущего элемента*/
 
         if (cureNode.getNext() == null) {/* если следующий элемент = null, то ->*/
@@ -145,11 +168,33 @@ public class MyLinkedList {
     }
 
     public int indexOf(Object o) {
-        return 0;
+        if (head == null) return -1;
+        if (head.getValue().equals(o)) return 1;
+        int count = 1;
+        Node curNode = head;
+        while (curNode.getNext() != null) {
+            count++;
+            curNode = curNode.getNext();
+            if (curNode.getValue().equals(o)) return count;
+        }
+        return -1;
     }
 
     public int lastIndexOf(Object o) {
-        return 0;
+        if (head==null)return -1;
+        Node cureNode = head;
+        Node prevNode = head;
+        int count = 1;
+        int resIndex = 1;
+        while (cureNode.getNext() != null) {
+            count++;
+            cureNode = cureNode.getNext();
+            if (cureNode.getValue().equals(o)) {
+                prevNode.setValue(cureNode);
+                resIndex = count;
+            }
+        }
+        return resIndex;
     }
 
     @Override
