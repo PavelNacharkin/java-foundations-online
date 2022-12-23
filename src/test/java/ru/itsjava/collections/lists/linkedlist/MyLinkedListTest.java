@@ -43,7 +43,7 @@ public class MyLinkedListTest {
     @Test
     public void shouldHaveCorrectAdd() {
         list.add("Привет");
-        Assertions.assertEquals("Привет", list.get(1));
+        Assertions.assertEquals("Привет", list.get(0));
         Assertions.assertEquals(1, list.size());
     }
 
@@ -73,8 +73,8 @@ public class MyLinkedListTest {
     public void shouldHaveCorrectGet() {
         list.add("Привет");
         list.add("Пока");
-        Assertions.assertEquals("Привет", list.get(1));
-        Assertions.assertEquals("Пока", list.get(2));
+        Assertions.assertEquals("Привет", list.get(0));
+        Assertions.assertEquals("Пока", list.get(1));
     }
 
 
@@ -83,10 +83,10 @@ public class MyLinkedListTest {
     public void shouldHaveCorrectSet() {
         list.add("Привет");
         list.add("Привет");
-        list.set(1, "Здравствуй");
-        list.set(2, "Добрый_день");
-        Assertions.assertEquals("Здравствуй", list.get(1));
-        Assertions.assertEquals("Добрый_день", list.get(2));
+        list.set(0, "Здравствуй");
+        list.set(1, "Добрый_день");
+        Assertions.assertEquals("Здравствуй", list.get(0));
+        Assertions.assertEquals("Добрый_день", list.get(1));
     }
 
 
@@ -95,8 +95,8 @@ public class MyLinkedListTest {
     public void shouldHaveCorrectRemoveToIndex() {
         list.add("Привет");
         list.add("Пока");
-        list.remove(1);
-        Assertions.assertEquals("Пока", list.get(1));
+        list.remove(0);
+        Assertions.assertEquals("Пока", list.get(0));
 
     }
 

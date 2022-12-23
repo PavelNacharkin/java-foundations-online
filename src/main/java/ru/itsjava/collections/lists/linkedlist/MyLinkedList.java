@@ -81,30 +81,26 @@ public class MyLinkedList {
 
     public void clear() {
         Node curNode = head;
-        while (curNode.getNext() != null) {
-            curNode = curNode.getNext();
+        Node prevNode = head;
+        while ((curNode = curNode.getNext()) != null) {
+            prevNode.setNext(null);
+            prevNode = curNode;
+            head = null;
         }
-        curNode.setNext(null);
-        head = null;
     }
 
     public Object get(int index) {
         checkIndex(index);
         Node curNode = head;
-        int count = 1;
-        for (int i = 1; i < index; i++) {
-            count++;
+        for (int i = 0; i < index; i++) {
             curNode = curNode.getNext();
-            if (index == count) {
-                return curNode.getValue();
-            }
         }
         return curNode.getValue();
     }
 
     public Object set(int index, Object element) {
         Node curNode = head;
-        for (int i = 1; i < index; i++) {
+        for (int i = 0; i < index; i++) {
             curNode = curNode.getNext();
         }
         curNode.setValue(element);
@@ -120,7 +116,7 @@ public class MyLinkedList {
     // СТРОКА1 -> СТРОКА 2 ->СТРОКА3 -> null
     public Object remove(int index) {
         checkIndex(index);/* Проверка корректности индекса */
-        if (index == 1) {/* Если инедкс равен 0 то -> */
+        if (index == 0) {/* Если инедкс равен 0 то -> */
             Object resValue = head.getValue();/* Создаем результирующий obj и присваеваем ему значение head */
             if (head.getNext() == null) {/* если у head ссылка на след obj равна null, то head один в этом списке*/
                 head = null;/* удаляем head присваивая ему null */
@@ -132,7 +128,7 @@ public class MyLinkedList {
         Node cureNode = head;/* создаем текущий элемент */
         Node prevNode = head;/*создаем предыдущий элемент */
 
-        int count = 1;/* счетчик индекса*/
+        int count = 0;/* счетчик индекса*/
         while ((cureNode = cureNode.getNext()) != null) {/* бежим по списку с первого передвигая curNode на след.*/
             count++;/* пробегаясь по элементам добавляем к count +1 */
             if (count == index) {/* когда найдем позицию элемента с числом count соответствующую входящему индексу*/
@@ -161,7 +157,7 @@ public class MyLinkedList {
     }
 
     private boolean isCorrectIndex(int index) {
-        if ((index > -1) && (index <= size())) {
+        if ((index > -1) && (index <= size() - 1)) {
             return true;
         }
         return false;

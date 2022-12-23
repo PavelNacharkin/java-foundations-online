@@ -24,10 +24,10 @@ public class MyLinkedListPractice {
         System.out.println("list = " + list);
         list.remove(1);
         System.out.println("list = " + list);
-////        list.clear();
+//        list.clear();
         System.out.println("list = " + list);
         System.out.println("list.size() = " + list.size());
-        System.out.println("list.get(2) = " + list.get(2));
+        System.out.println("list.get(1) = " + list.get(1));
 //
 //        list.set(2, "Строка 5");
 
