@@ -166,9 +166,9 @@ public class MyLinkedList {
     public int indexOf(Object o) {
         if (head == null) return -1;
         if (head.getValue().equals(o)) return 1;
-        int count = 1;
+        int count = 0;
         Node curNode = head;
-        while (curNode.getNext() != null) {
+        while (curNode != null) {
             count++;
             curNode = curNode.getNext();
             if (curNode.getValue().equals(o)) return count;
@@ -178,17 +178,15 @@ public class MyLinkedList {
 
     public int lastIndexOf(Object o) {
         if (head == null) return -1;
-        Node cureNode = head;
-        Node prevNode = head;
-        int count = 1;
-        int resIndex = 1;
-        while (cureNode.getNext() != null) {
-            count++;
-            cureNode = cureNode.getNext();
-            if (cureNode.getValue().equals(o)) {
-                prevNode.setValue(cureNode);
+        Node curNode = head;
+        int count = 0;
+        int resIndex = -1;
+        while (curNode != null) {
+            if (curNode.getValue().equals(o)) {
                 resIndex = count;
             }
+            count++;
+            curNode = curNode.getNext();
         }
         return resIndex;
     }

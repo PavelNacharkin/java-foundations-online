@@ -107,7 +107,7 @@ public class MyLinkedListTest {
         list.add("Привет");
         list.add("Пока");
         list.add("Привет");
-        Assertions.assertEquals(2, list.indexOf("Пока"));
+        Assertions.assertEquals(1, list.indexOf("Пока"));
     }
 
 
@@ -117,7 +117,7 @@ public class MyLinkedListTest {
         list.add("Привет");
         list.add("Пока");
         list.add("Привет");
-        Assertions.assertEquals(3, list.lastIndexOf("Привет"));
+        Assertions.assertEquals(2, list.lastIndexOf("Привет"));
     }
 }
 
