@@ -57,5 +57,29 @@ public class IOStreamsHW {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
+
+//        User user = new User("Pavel", "QWERTY1234");
+//
+//
+//        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream
+//                (new FileOutputStream("src/main/resources/user.out"))) {
+//            objectOutputStream.writeObject(user);
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+
+        try (ObjectInputStream objectInputStream = new ObjectInputStream
+                (new FileInputStream("src/main/resources/user.out"))) {
+            Object obj = objectInputStream.readObject();
+            User user = (User) obj;
+            System.out.println("User = " + user.getLogin() + ": " + user.getPassword());
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
