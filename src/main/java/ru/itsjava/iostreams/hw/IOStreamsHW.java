@@ -24,33 +24,36 @@ public class IOStreamsHW {
             e.printStackTrace();
         }
 
-        /* Создали коллекцию*/
-        List<String> collection = new ArrayList<>();
+        /* Создали коллекцию 1*/
+        List<String> collection1 = new ArrayList<>();
 
         /* Считали текст из file1  в коллекцию*/
         try (BufferedReader reader = new BufferedReader(new FileReader(file1))) {
-            collection.add(reader.readLine());
+            collection1.add(reader.readLine());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
+        /* Создали коллекцию 2*/
+        List<String> collection2 = new ArrayList<>();
+
         /* Считали текст из file2  в коллекцию*/
         try (BufferedReader reader = new BufferedReader(new FileReader(file2))) {
-            collection.add(reader.readLine());
+            collection2.add(reader.readLine());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
         /* Записали текст из коллекции в file1*/
         try (PrintWriter printWriter = new PrintWriter(file1)) {
-            printWriter.println(collection.get(1));
+            printWriter.println(collection2.get(0));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
         /* Записали текст из коллекции в file2*/
         try (PrintWriter printWriter = new PrintWriter(file2)) {
-            printWriter.println(collection.get(0));
+            printWriter.println(collection1.get(0));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
