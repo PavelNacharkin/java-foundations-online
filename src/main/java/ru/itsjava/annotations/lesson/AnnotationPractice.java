@@ -1,4 +1,4 @@
-package ru.itsjava.annotations;
+package ru.itsjava.annotations.lesson;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -14,7 +14,7 @@ public class AnnotationPractice {
 //        System.out.println(personClass.getName());
 //        System.out.println(personClass.getSimpleName());
 
-        Class<?> personClass = Class.forName("ru.itsjava.annotations.Person");
+        Class<?> personClass = Class.forName("ru.itsjava.annotations.lesson.Person");
         System.out.println(personClass.getName());
         Person vanya = (Person) personClass.getConstructor(String.class, Boolean.TYPE)
                 .newInstance("Vanya", true);
@@ -25,6 +25,7 @@ public class AnnotationPractice {
         isGood.setAccessible(true);
         isGood.setBoolean(vanya, false);
         System.out.println(vanya);
+        System.out.println(isGood.get(vanya));
 
 
     }

@@ -1,4 +1,4 @@
-package ru.itsjava.annotations;
+package ru.itsjava.annotations.lesson;
 
 
 import java.lang.annotation.ElementType;
