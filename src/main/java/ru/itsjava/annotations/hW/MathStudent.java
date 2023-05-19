@@ -8,6 +8,6 @@ import lombok.ToString;
 @ToString
 public class MathStudent {
     private final String name;
-    private final String surName;
+    private final String surname;
     private int course;
 }
