@@ -1,4 +1,4 @@
-package ru.itsjava.annotations.junit;
+package ru.itsjava.annotations.junit.annotatoins;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
